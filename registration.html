@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="icon/yiyuan.svg" type="image/svg">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/bootstrapValidator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>挂号</title>
+</head>
+<body>
+
+<div class="header">
+  <nav class="navbar fixed-top navbar-light bg-info">
+    <div class="container">
+      <a class="navbar-brand" href="#">HCL 门诊系统</a>
+    </div>
+  </nav>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="container">
+      <li class="breadcrumb-item active" aria-current="page">门诊挂号</li>
+    </div>
+  </ol>
+</nav>
+
+<div class="container container-wrap">
+  <form id="registration" class="form-horizontal">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card border-info mb-3">
+          <div class="card-header">个人信息</div>
+          <div class="card-body text-info">
+            <div class="form-group row">
+              <label for="userName" class="col-lg-3 col-form-label text-lg-right"><span
+                      class="text-danger">*</span>姓名</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" id="userName" name="userName">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="personalID" class="col-lg-3 col-form-label text-lg-right"><span class="text-danger">*</span>身份证</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" id="personalID" name="personalID">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="age" class="col-lg-3 col-form-label text-lg-right"><span
+                      class="text-danger">*</span>年龄</label>
+              <div class="input-group col-lg-4 mb-sm-3 mb-lg-0">
+                <input type="text" class="form-control" id="age" value="20" disabled>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">岁</div>
+                </div>
+              </div>
+
+              <label class="col-lg-2 col-form-label text-lg-right" for="sex"><span
+                      class="text-danger">*</span>性别</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="sex" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="birth" class="col-lg-3 col-form-label text-lg-right"><span
+                      class="text-danger">*</span>出生日期</label>
+              <div class="col-lg-9">
+                <input type="datetime-local" class="form-control" id="birth" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="address" class="col-lg-3 col-form-label text-lg-right">家庭住址</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" id="address">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-info mb-3">
+          <div class="card-header">挂号信息</div>
+          <div class="card-body text-info">
+            <div class="form-group row">
+              <label for="visitDate" class="col-lg-3 col-form-label text-lg-right"><span
+                      class="text-danger">*</span>看诊日期</label>
+              <div class="col-lg-9">
+                <input type="datetime-local" class="form-control" id="visitDate">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="dept" class="col-lg-3 col-form-label text-lg-right"><span
+                      class="text-danger">*</span>预约科室</label>
+              <div class="col-lg-9">
+                <select class="custom-select" id="dept">
+                  <option selected>请选择</option>
+                  <option value="1">内科</option>
+                  <option value="2">外科</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label text-lg-right" for="type">支付方式</label>
+              <div class="col-lg-3 mb-sm-3 mb-lg-0">
+                <input type="text" class="form-control" id="type" value="现金支付" disabled>
+              </div>
+
+              <label for="money" class="col-lg-3 col-form-label text-lg-right">支付金额</label>
+              <div class="input-group col-lg-3">
+                <input type="text" class="form-control" id="money" value="8" disabled>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">元</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 col-lg-9 offset-lg-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    是否需要打印病历单
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-info btn-block" data-toggle="modal" data-target="#staticBackdrop">挂 号</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- 支付模态框 -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">支付</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>本次挂号费用: <span class="h4">15</span> 元</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#infoModal">确认挂号</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 病历号信息模态框 -->
+<div class="modal fade" id="infoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">提示</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="h4">挂号ID: 1001</p>
+        <p class="h4">病历号: 20001109</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="lib/bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+  $('#registration').bootstrapValidator({
+    message: '此值无效!',
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+
+    fields: {
+      userName: {
+        validators: {
+          notEmpty: {
+            message: '姓名值不能为空！'
+          },
+          stringLength: {
+            min: 2,
+            message: '用户名长度必须大于2！'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z\u4e00-\u9fa5]+$/,
+            message: '用户名不能有数字和字符！'
+          }
+        },
+      },
+      personalID: {
+        validators: {
+          notEmpty: {
+            message: '身份证号码不能为空！'
+          },
+          regexp: {
+            regexp: /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/,
+            message: '身份证号码格式不正确，为15位和18位身份证号码！'
+          },
+          callback: {/*自定义，可以在这里与其他输入项联动校验*/
+            message: '身份证号码无效！',
+            callback: function (value, validator, $field) {
+              //15位和18位身份证号码的正则表达式
+              var regIdCard = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
+              //如果通过该验证，说明身份证格式正确，但准确性还需计算
+              var idCard = value;
+              if (regIdCard.test(idCard)) {
+                if (idCard.length == 18) {
+                  var idCardWi = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2); //将前17位加权因子保存在数组里
+                  var idCardY = new Array(1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+                  var idCardWiSum = 0; //用来保存前17位各自乖以加权因子后的总和
+                  for (var i = 0; i < 17; i++) {
+                    idCardWiSum += idCard.substring(i, i + 1) * idCardWi[i];
+                  }
+                  var idCardMod = idCardWiSum % 11;//计算出校验码所在数组的位置
+                  var idCardLast = idCard.substring(17);//得到最后一位身份证号码
+                  //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+                  if (idCardMod == 2) {
+                    if (idCardLast == "X" || idCardLast == "x") {
+                      return true;
+                      //alert("恭喜通过验证啦！");
+                    } else {
+                      return false;
+                      //alert("身份证号码错误！");
+                    }
+                  } else {
+                    //用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+                    if (idCardLast == idCardY[idCardMod]) {
+                      //alert("恭喜通过验证啦！");
+                      return true;
+                    } else {
+                      return false;
+                      //alert("身份证号码错误！");
+                    }
+                  }
+                }
+              } else {
+                //alert("身份证格式不正确!");
+                return false;
+              }
+            }
+          }
+        }
+      },
+    }
+  });
+</script>
+
+</html>
