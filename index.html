@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="icon/yiyuan.svg" type="image/svg">
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>HCL 门诊系统</title>
 </head>
@@ -18,25 +19,105 @@
   </nav>
 </div>
 
-<div class="page-content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2">
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 my-3">
+
+
+      <ul id="accordion" class="accordion">
+        <li>
+          <div class="link"><i class="bi bi-house-fill"></i>语音技术voice<i class="fa fa-chevron-down"></i></div>
+          <ul  class="submenu">
+            <li><a href="#">语音识别</a></li>
+            <li><a href="#">语音合成</a></li>
+            <li><a href="#">语音唤醒</a></li>
+            <li><a href="#">智能呼叫中心</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="link"><i class="fa fa-code"></i>图像技术photo<i class="fa fa-chevron-down"></i></div>
+          <ul  class="submenu">
+            <li><a href="#">文字识别</a></li>
+            <li><a href="#">图像识别</a></li>
+            <li><a href="#">图像审核</a></li>
+            <li><a href="#">图像搜索</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="link"><i class="fa fa-mobile"></i>人脸与人体识别face<i class="fa fa-chevron-down"></i></div>
+          <ul  class="submenu">
+            <li><a href="#">人脸识别</a></li>
+            <li><a href="#">人体分析</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="link"><i class="fa fa-globe"></i>视频技术video<i class="fa fa-chevron-down"></i></div>
+          <ul  class="submenu">
+            <li><a href="#">视频内容分析</a></li>
+            <li><a href="#">视频封面选取</a></li>
+            <li><a href="#">视频比对检索</a></li>
+            <li><a href="#">视频内容审核</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+<!--      <div class="middle">-->
+<!--        <ul class="menu">-->
+<!--          <li class="item" id="profile">-->
+<!--            <a href="#profile" class="btn"><i class="bi bi-house-fill"></i>我的</a>-->
+<!--            <div class="smenu">-->
+<!--              <a href="javascript:void(0);">发布</a>-->
+<!--              <a href="javascript:void(0);">图片</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="item" id="messages">-->
+<!--            <a href="#messages" class="btn"><i class="iconfont icon-mail"></i>邮件</a>-->
+<!--            <div class="smenu">-->
+<!--              <a href="javascript:void(0);">写邮件</a>-->
+<!--              <a href="javascript:void(0);">草稿箱</a>-->
+<!--              <a href="javascript:void(0);">已发送</a>-->
+<!--              <a href="javascript:void(0);">垃圾箱</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="item" id="settings">-->
+<!--            <a href="#settings" class="btn"><i class="iconfont icon-setting"></i>设置</a>-->
+<!--            <div class="smenu">-->
+<!--              <a href="javascript:void(0);">密码</a>-->
+<!--              <a href="javascript:void(0);">语言</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="item">-->
+<!--            <a href="javascript:void(0);" class="btn"><i class="iconfont icon-logout"></i>注销</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+
+
+
     </div>
   </div>
 </div>
-
-<!--<nav aria-label="breadcrumb">-->
-<!--  <ol class="breadcrumb">-->
-<!--    <div class="container">-->
-<!--      <li class="breadcrumb-item active" aria-current="page">门诊挂号</li>-->
-<!--    </div>-->
-<!--  </ol>-->
-<!--</nav>-->
 
 </body>
 <script src="lib/bootstrap/js/jquery-3.5.1.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+  $(function(){
+    $(".accordion > li").on('click', '.link', function() {
+      $(this).next(".submenu").slideToggle(500);
+      //这里的this代表的就是html模块中:class为link的div;link的next()就为submenu，功能为：下拉列表的出现与消失
+      $(this).parent().siblings().children('.submenu').slideUp(500);
+      //如果一个列表展开，其他的兄弟列表就要收起
+      $(this).find(".fa-chevron-down").animate().toggleClass("fa-chevron-down-hover");
+      //关于图标旋转问题，点击一下旋转180度，再次点击回来原来的位置
+      $(this).parent().siblings().children(".link").find(".fa-chevron-down").animate().removeClass("fa-chevron-down-hover");
+      //除了被点击的li，所有的li都要去掉fa-chevron-down-hover 这个class
+      console.log("方法被执行");
+    });
+  });
+</script>
 </html>
