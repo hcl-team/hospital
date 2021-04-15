@@ -1,79 +1,38 @@
 body {
   padding: 0;
   margin: 0;
-  background: #0c5460;
+  background: #f3f3f3;
 }
 
 .header {
   height: 56px;
 }
 
+.accordion .card-header {
+  padding: 0;
+}
 
-ul {
-  list-style-type:none; /*去掉前面小圆点*/
+.accordion .card-body {
+  padding: .5rem 1.25rem;
 }
-.accordion {
-  max-width: 360px;
-  width: 100%;
-  background-color: #ffffff;
-  -webkit-border-radius:4px;
-  -moz-border-radius:4px;
-  border-radius: 4px;
-  margin: 30px auto 20px;
+
+.undone caption, .finish caption {
+  padding: .25rem .5rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: top;
 }
-.accordion .link{
-  cursor: pointer;
-  display: block;
-  padding: 15px 15px 15px 42px;
-  color: #4d4d4d;
-  font-size: 14px;
-  font-weight:700;
-  border-bottom:1px solid #ccc;
-  position:relative;
+
+.table-box {
+  height: 150px;
+  overflow: auto;
 }
-.accordion li i {
-  position:absolute;
-  top:16px;
-  left:12px;
-  font-size:18px;
-  color:#595959;
+
+#tab1-item2 button {
+  color: #17a2b8;
 }
-.accordion li i.fa-chevron-down {
-  right:12px;
-  left:auto;
-  font-size:16px;
-  -webkit-transition:all .4s ease;
-  -o-transition:all .4s ease;
-  transition:all .4s ease
+
+#tab1-item2 button[disabled] {
+  color: #6c757d;
 }
-.submenu {
-  display:none;
-  background:#444359;
-  font-size:14px
-}
-.display{
-  display: block;
-}
-.submenu li {
-  border-bottom:1px solid #4b4a5e
-}
-.submenu a {
-  display:block;
-  text-decoration:none;
-  color:#d9d9d9;
-  padding:12px;
-  padding-left:42px;
-  -webkit-transition:all .25s ease;
-  -o-transition:all .25s ease;
-  transition:all .25s ease
-}
-.submenu a:hover {
-  background:#b63b4d;
-  color:#fff;
-}
-.fa-chevron-down-hover{ /* JQ对它的操作：点击后添加这个class，再次点击后去除这个class*/
-  -webkit-transform:rotate(180deg);
-  -ms-transform:rotate(180deg);
-  -o-transform:rotate(180deg);
-  transform:rotate(180deg)
-}
+

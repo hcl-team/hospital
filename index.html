@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /*.table thead{*/
+    /*  position: absolute;*/
+    /*  top: 0;*/
+    /*  left: 0;*/
+    /*}*/
+
+    .table {
+      table-layout: fixed;
+      margin-bottom: -1px;
+    }
+  </style>
   <title>HCL 门诊系统</title>
 </head>
 <body>
@@ -21,103 +33,486 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 my-3">
+    <div class="col-md-2">
+      <div class="accordion my-3" id="accordionExample">
+        <div class="card">
 
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                      data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                门诊医生
+              </button>
+            </h2>
+          </div>
 
-      <ul id="accordion" class="accordion">
-        <li>
-          <div class="link"><i class="bi bi-house-fill"></i>语音技术voice<i class="fa fa-chevron-down"></i></div>
-          <ul  class="submenu">
-            <li><a href="#">语音识别</a></li>
-            <li><a href="#">语音合成</a></li>
-            <li><a href="#">语音唤醒</a></li>
-            <li><a href="#">智能呼叫中心</a></li>
-          </ul>
-        </li>
-        <li>
-          <div class="link"><i class="fa fa-code"></i>图像技术photo<i class="fa fa-chevron-down"></i></div>
-          <ul  class="submenu">
-            <li><a href="#">文字识别</a></li>
-            <li><a href="#">图像识别</a></li>
-            <li><a href="#">图像审核</a></li>
-            <li><a href="#">图像搜索</a></li>
-          </ul>
-        </li>
-        <li>
-          <div class="link"><i class="fa fa-mobile"></i>人脸与人体识别face<i class="fa fa-chevron-down"></i></div>
-          <ul  class="submenu">
-            <li><a href="#">人脸识别</a></li>
-            <li><a href="#">人体分析</a></li>
-          </ul>
-        </li>
-        <li>
-          <div class="link"><i class="fa fa-globe"></i>视频技术video<i class="fa fa-chevron-down"></i></div>
-          <ul  class="submenu">
-            <li><a href="#">视频内容分析</a></li>
-            <li><a href="#">视频封面选取</a></li>
-            <li><a href="#">视频比对检索</a></li>
-            <li><a href="#">视频内容审核</a></li>
-          </ul>
-        </li>
-      </ul>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <a href="">诊断</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                收费
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body border-bottom">
+              <a href="">医疗收费</a>
+            </div>
+            <div class="card-body">
+              <a href="">药房收费</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                医疗检验
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              123
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="row my-3 border-info bg-white rounded">
+        <div class="col-md-6 py-3">
+          <table class="table table-sm undone">
+            <caption class="bg-info rounded text-white">未诊患者</caption>
+            <thead>
+            <tr>
+              <th>病历号</th>
+              <th>姓名</th>
+              <th style="width: 7rem">挂号</th>
+            </tr>
+            </thead>
+          </table>
+          <div class="table-box">
+            <table class="table table-hover table-sm">
+              <tbody>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td style="width: 6rem">014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 py-3">
+          <table class="table table-sm finish">
+            <caption class="bg-info rounded text-white">已诊患者</caption>
+            <thead>
+            <tr>
+              <th>病历号</th>
+              <th>姓名</th>
+              <th style="width: 7rem">挂号</th>
+            </tr>
+            </thead>
+          </table>
+          <div class="table-box">
+            <table class="table table-hover table-sm">
+              <tbody>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td style="width: 6rem">014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              <tr>
+                <td>511</td>
+                <td>Otto</td>
+                <td>014</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-white rounded my-3">
+        <div class="col-10 py-3 text-info pr-0">
+          <span class="pr-3">患者姓名：张三</span>
+          <span class="pr-3">性别：男</span>
+          <span class="pr-3">年龄：17</span>
+          <span class="pr-3">病历号：512999</span>
+        </div>
+        <div class="col-2 py-3 text-right pl-0">
+          <a href="#">诊毕</a>
+        </div>
+        <!--  患者病历S -->
+        <div class="col-md-12">
+          <div class="card" style="border: none;">
+            <div class="card-header" style="background: none;">
+              <ul id="tab1" class="nav nav-tabs card-header-tabs">
+                <li class="nav-item active"><a href="#tab1-item1" class="nav-link active" data-toggle="tab">病历首页</a>
+                </li>
+                <li class="nav-item"><a href="#tab1-item2" class="nav-link" data-toggle="tab">检查申请</a></li>
+                <li class="nav-item"><a href="#tab1-item3" class="nav-link" data-toggle="tab">开处方单</a></li>
+              </ul>
+            </div>
 
+            <div class="card-body tab-content">
+              <!-- 第一部分S -->
+              <div class="tab-pane fade show active in" id="tab1-item1">
+                <form>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea1">主诉</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea1" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea2">现病史</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea2" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea3">现病治疗情况</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea3" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea4">既往史</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea4" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea5">过敏史</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea5" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                  <div class="form-group row text-md-right">
+                    <label class="col-md-2" for="recordFormControlTextarea6">体格检查</label>
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea6" rows="2"
+                              style="min-height: 38px;"></textarea>
+                  </div>
+                </form>
+              </div>
+              <!-- 第一部分E -->
 
+              <!-- 第二部分S -->
+              <div class="tab-pane fade" id="tab1-item2">
+                <div class="row">
+                  <div class="col-12 bg-light rounded text-center py-1 mb-1">
+                    <button type="button" class="btn mr-3" id="addTypeBtn" data-toggle="modal"
+                            data-target="#addTypeModal">
+                      <i class="bi bi-plus-circle-fill"></i>
+                      新增项目
+                    </button>
 
-<!--      <div class="middle">-->
-<!--        <ul class="menu">-->
-<!--          <li class="item" id="profile">-->
-<!--            <a href="#profile" class="btn"><i class="bi bi-house-fill"></i>我的</a>-->
-<!--            <div class="smenu">-->
-<!--              <a href="javascript:void(0);">发布</a>-->
-<!--              <a href="javascript:void(0);">图片</a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="item" id="messages">-->
-<!--            <a href="#messages" class="btn"><i class="iconfont icon-mail"></i>邮件</a>-->
-<!--            <div class="smenu">-->
-<!--              <a href="javascript:void(0);">写邮件</a>-->
-<!--              <a href="javascript:void(0);">草稿箱</a>-->
-<!--              <a href="javascript:void(0);">已发送</a>-->
-<!--              <a href="javascript:void(0);">垃圾箱</a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="item" id="settings">-->
-<!--            <a href="#settings" class="btn"><i class="iconfont icon-setting"></i>设置</a>-->
-<!--            <div class="smenu">-->
-<!--              <a href="javascript:void(0);">密码</a>-->
-<!--              <a href="javascript:void(0);">语言</a>-->
-<!--            </div>-->
-<!--          </li>-->
-<!--          <li class="item">-->
-<!--            <a href="javascript:void(0);" class="btn"><i class="iconfont icon-logout"></i>注销</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
+                    <button type="button" class="btn" id="subTypeBtn" disabled>
+                      <i class="bi bi-x-circle-fill"></i>
+                      删除项目
+                    </button>
+                  </div>
 
+                  <div class="col-12 mb-1">
+                    <h6>
+                      <span class="badge badge-info">本项目金额合计：</span>
 
+                      <span class="badge" style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3">120</span>
+                    </h6>
+                  </div>
 
+                  <div class="col-12 px-0">
+                    <table class="table">
+                      <thead id="checkThead">
+                      <tr>
+                        <th><input id='checkAll' type="checkbox" disabled/></th>
+                        <th scope="col">项目名称</th>
+                        <th scope="col">执行科室</th>
+                        <th scope="col">状态</th>
+                        <th scope="col">单价</th>
+                        <th scope="col">检查结果</th>
+                      </tr>
+                      </thead>
+                      <tbody id="checkTbody"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- 第二部分E -->
+
+              <!-- 第三部分S -->
+              <div class="tab-pane fade" id="tab1-item3">
+                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro
+                  fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone
+                  skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings
+                  gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork
+                  biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
+                  craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+              </div>
+              <!-- 第三部分E -->
+            </div>
+          </div>
+        </div>
+        <!--  患者病历E -->
+      </div>
     </div>
   </div>
 </div>
+
+<!--Modal-->
+<div class="modal fade" id="addTypeModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">添加</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form action="">
+            <div class="form-group row">
+              <label for="itemName" class="col-md-3 text-md-right">项目名称</label>
+              <select class="form-control-sm col-md-9" id="itemName">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="itemClass" class="col-md-3 text-md-right">项目科室</label>
+              <select class="form-control-sm col-md-9" id="itemClass">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="itemClass" class="col-md-3 text-md-right">单价</label>
+              <h5 class="col-md-9 px-0">50</h5>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addTypeSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 <script src="lib/bootstrap/js/jquery-3.5.1.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
 <script>
-  $(function(){
-    $(".accordion > li").on('click', '.link', function() {
-      $(this).next(".submenu").slideToggle(500);
-      //这里的this代表的就是html模块中:class为link的div;link的next()就为submenu，功能为：下拉列表的出现与消失
-      $(this).parent().siblings().children('.submenu').slideUp(500);
-      //如果一个列表展开，其他的兄弟列表就要收起
-      $(this).find(".fa-chevron-down").animate().toggleClass("fa-chevron-down-hover");
-      //关于图标旋转问题，点击一下旋转180度，再次点击回来原来的位置
-      $(this).parent().siblings().children(".link").find(".fa-chevron-down").animate().removeClass("fa-chevron-down-hover");
-      //除了被点击的li，所有的li都要去掉fa-chevron-down-hover 这个class
-      console.log("方法被执行");
+  $(function () {
+    //初始化
+    function initTable() {
+      var checkAll = $('#checkAll');
+      var trs = $('#checkTbody tr');
+      var tag = $('<td><input name="checkitem" type="checkbox"/></td>');
+      trs.prepend(tag);
+
+      //得到tbody中的所有选框.
+      var checks = $('input[name="checkitem"]');
+
+      //给全选框添加事件
+      checkAll.on('click', function (event) {
+        if ($(this).prop('checked') == false) { //全部取消
+          // console.log('false');
+          $('#subTypeBtn').prop('disabled', true);
+          $('input[type="checkbox"]').prop('checked', false);
+        } else {
+          // console.log('true');
+          $('#subTypeBtn').prop('disabled', false);
+          $('input[type="checkbox"]').prop('checked', true);
+        }
+      });
+
+      //给每个单独的选择框加事件
+      $('#checkTbody').on('click', function (event) {
+        checks = $('input[name="checkitem"]');
+        if (event.target.name == 'checkitem') {
+          if ($(this).prop('checked') == false) {
+            $(this).prop('checked', false);
+          } else {
+            $(this).prop('checked', true);
+          }
+          //判断是否选满了
+          if (checks.length == $('#checkTbody').find('input:checked').length) {
+            checkAll.prop('checked', true);
+          } else {
+            checkAll.prop('checked', false);
+          }
+
+          //判断是否有选中
+          if ($('#checkTbody').find('input:checked').length != 0) {
+            $('#subTypeBtn').prop('disabled', false);
+          } else {
+            $('#subTypeBtn').prop('disabled', true);
+          }
+        }
+      });
+    }
+
+    initTable();
+
+    //新增点击事件
+    $('#addTypeSubmit').on('click', function () {
+      var html = '';
+      html += '<tr class="active">';
+      html += '<td><input name="checkitem" type="checkbox"/></td>'
+      html += '<td><span>查血</span></td>';
+      html += '<td><span>检验科</span></td>';
+      html += '<td><span>未检查</span></td>';
+      html += '<td><span>50</span></td>';
+      html += '<td><button type="button" class="btn p-0">查看结果</button></td>';
+      // html += '<td>';
+      html += '</tr>';
+      var html = $(html)
+      $('#checkTbody').append(html);
+      //取消全选
+      $('#checkAll').prop('checked', false);
+      $('#checkAll').prop('disabled', false);
     });
+
+    $("#subTypeBtn").on('click', function () {
+      /** 批量删除*/
+      $("input[name='checkitem']:checked").each(function () {// 遍历选中的checkbox
+        var n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
+        delRow(n);
+      });
+    });
+
+    //删除选中行方法
+    function delRow(n) {
+      // console.log($("#checkTbody tr").length + '----' + n );
+      //判断表格为空
+      if ($("#checkTbody tr").length == n + 1) {
+        $('#checkAll').prop('checked', false);
+        $('#checkAll').prop('disabled', true);
+        $('#subTypeBtn').prop('disabled', true);
+      }
+      $("#checkTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
+
+    }
   });
 </script>
 </html>
