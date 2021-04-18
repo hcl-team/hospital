@@ -28,11 +28,15 @@ body {
   overflow: auto;
 }
 
-#tab1-item2 button {
+.button-pane button{
   color: #17a2b8;
 }
 
-#tab1-item2 button[disabled] {
+.button-pane button:hover {
+  color: #128395;
+}
+
+.button-pane button[disabled] {
   color: #6c757d;
 }
 

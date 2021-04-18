@@ -7,13 +7,9 @@
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
+  <!--  引用toast-->
+  <link rel="stylesheet" href="./lib/toast/css/toastr.min.css">
   <style>
-    /*.table thead{*/
-    /*  position: absolute;*/
-    /*  top: 0;*/
-    /*  left: 0;*/
-    /*}*/
-
     .table {
       table-layout: fixed;
       margin-bottom: -1px;
@@ -123,46 +119,6 @@
                 <td>Otto</td>
                 <td>014</td>
               </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
               </tbody>
             </table>
           </div>
@@ -201,46 +157,6 @@
                 <td>Otto</td>
                 <td>014</td>
               </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
-              <tr>
-                <td>511</td>
-                <td>Otto</td>
-                <td>014</td>
-              </tr>
               </tbody>
             </table>
           </div>
@@ -254,7 +170,7 @@
           <span class="pr-3">病历号：512999</span>
         </div>
         <div class="col-2 py-3 text-right pl-0">
-          <a href="#">诊毕</a>
+          <a href="" data-toggle="modal" data-target="#EndModal">诊毕</a>
         </div>
         <!--  患者病历S -->
         <div class="col-md-12">
@@ -271,35 +187,43 @@
             <div class="card-body tab-content">
               <!-- 第一部分S -->
               <div class="tab-pane fade show active in" id="tab1-item1">
+                <div class="row">
+                  <div class="col-12 bg-light rounded text-center py-1 mb-3 button-pane">
+                    <button type="button" class="btn" id="homeSubmitBtn">
+                      <i class="bi bi-check-circle-fill"></i>
+                      提交
+                    </button>
+                  </div>
+                </div>
                 <form>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea1">主诉</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea1" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea1" rows="1" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea2">现病史</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea2" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea2" rows="2" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea3">现病治疗情况</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea3" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea3" rows="2" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea4">既往史</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea4" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea4" rows="2" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea5">过敏史</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea5" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea5" rows="2" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                   <div class="form-group row text-md-right">
                     <label class="col-md-2" for="recordFormControlTextarea6">体格检查</label>
-                    <textarea class="form-control col-md-10" id="recordFormControlTextarea6" rows="2"
+                    <textarea class="form-control col-md-10" id="recordFormControlTextarea6" rows="2" placeholder="无"
                               style="min-height: 38px;"></textarea>
                   </div>
                 </form>
@@ -309,7 +233,7 @@
               <!-- 第二部分S -->
               <div class="tab-pane fade" id="tab1-item2">
                 <div class="row">
-                  <div class="col-12 bg-light rounded text-center py-1 mb-1">
+                  <div class="col-12 bg-light rounded text-center py-1 mb-1 button-pane">
                     <button type="button" class="btn mr-3" id="addTypeBtn" data-toggle="modal"
                             data-target="#addTypeModal">
                       <i class="bi bi-plus-circle-fill"></i>
@@ -320,30 +244,38 @@
                       <i class="bi bi-x-circle-fill"></i>
                       删除项目
                     </button>
+
+                    <button type="button" class="btn" id="checkSubmitBtn" disabled>
+                      <i class="bi bi-check-circle-fill"></i>
+                      开立项目
+                    </button>
                   </div>
 
                   <div class="col-12 mb-1">
                     <h6>
                       <span class="badge badge-info">本项目金额合计：</span>
 
-                      <span class="badge" style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3">120</span>
+                      <span class="badge"
+                            style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3"><span>120</span>元</span>
                     </h6>
                   </div>
 
                   <div class="col-12 px-0">
-                    <table class="table">
-                      <thead id="checkThead">
-                      <tr>
-                        <th><input id='checkAll' type="checkbox" disabled/></th>
-                        <th scope="col">项目名称</th>
-                        <th scope="col">执行科室</th>
-                        <th scope="col">状态</th>
-                        <th scope="col">单价</th>
-                        <th scope="col">检查结果</th>
-                      </tr>
-                      </thead>
-                      <tbody id="checkTbody"></tbody>
-                    </table>
+                    <div class="table-responsive-lg" style="height: 300px">
+                      <table class="table">
+                        <thead id="checkThead">
+                        <tr>
+                          <th style="width: 3rem;"><input id='checkAll' type="checkbox" disabled/></th>
+                          <th style="width: 12rem;" scope="col">项目名称</th>
+                          <th style="width: 6rem;" scope="col">执行科室</th>
+                          <th style="width: 6rem;" scope="col">状态</th>
+                          <th style="width: 5rem;" scope="col">单价</th>
+                          <th style="width: 5rem;" scope="col">检查结果</th>
+                        </tr>
+                        </thead>
+                        <tbody id="checkTbody"></tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -351,12 +283,54 @@
 
               <!-- 第三部分S -->
               <div class="tab-pane fade" id="tab1-item3">
-                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro
-                  fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone
-                  skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings
-                  gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork
-                  biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
-                  craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                <div class="row">
+                  <div class="col-12 bg-light rounded text-center py-1 mb-1 button-pane">
+                    <button type="button" class="btn mr-3" id="addDrugBtn" data-toggle="modal"
+                            data-target="#addDrugModal">
+                      <i class="bi bi-plus-circle-fill"></i>
+                      增药
+                    </button>
+
+                    <button type="button" class="btn" id="subDrugBtn" disabled>
+                      <i class="bi bi-x-circle-fill"></i>
+                      删药
+                    </button>
+
+                    <button type="button" class="btn" id="drugSubmitBtn" disabled>
+                      <i class="bi bi-check-circle-fill"></i>
+                      开立
+                    </button>
+                  </div>
+
+                  <div class="col-12 mb-1">
+                    <h6>
+                      <span class="badge badge-info">本项目金额合计：</span>
+
+                      <span class="badge"
+                            style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3"><span>120</span>元</span>
+                    </h6>
+                  </div>
+
+                  <div class="col-12 px-0">
+                    <div class="table-responsive-lg" style="height: 300px">
+                      <table class="table">
+                        <thead id="drugThead">
+                        <tr>
+                          <th style="width: 4rem;"><input id='drugCheckAll' type="checkbox" disabled/></th>
+                          <th style="width: 12rem;" scope="col">药品名称</th>
+                          <th style="width: 8rem;" scope="col">规格</th>
+                          <th style="width: 5rem;" scope="col">单价</th>
+                          <th style="width: 5rem;" scope="col">用法</th>
+                          <th style="width: 5rem;" scope="col">用量</th>
+                          <th style="width: 3rem;" scope="col">频次</th>
+                          <th style="width: 4rem;" scope="col">数量</th>
+                        </tr>
+                        </thead>
+                        <tbody id="drugTbody"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- 第三部分E -->
             </div>
@@ -368,7 +342,7 @@
   </div>
 </div>
 
-<!--Modal-->
+<!--新增项目Modal-->
 <div class="modal fade" id="addTypeModal" data-backdrop="static" data-keyboard="false"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -403,7 +377,7 @@
               </select>
             </div>
             <div class="form-group row">
-              <label for="itemClass" class="col-md-3 text-md-right">单价</label>
+              <label class="col-md-3 text-md-right">单价</label>
               <h5 class="col-md-9 px-0">50</h5>
             </div>
           </form>
@@ -416,103 +390,129 @@
   </div>
 </div>
 
+<!--增药Modal-->
+<div class="modal fade" id="addDrugModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">添加</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form action="">
+            <div class="form-group row">
+              <label for="drugName" class="col-md-3 text-md-right">药品名称</label>
+              <select class="form-control-sm col-md-9" id="drugName">
+                <option>999感冒颗粒</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="size" class="col-md-3 text-md-right">规格</label>
+              <input type="text" class="col-md-9" id="size" disabled value="10袋*1盒">
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 text-md-right">单价</label>
+              <h5 class="col-md-9">5.00</h5>
+            </div>
+            <div class="form-group row">
+              <label for="usage" class="col-md-3 text-md-right">用法</label>
+              <select class="form-control-sm col-md-9" id="usage">
+                <option>口服</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 text-md-right">用量</label>
+              <input type="text" class="col-md-9" value="1袋"/>
+            </div>
+            <div class="form-group row">
+              <label for="frequency" class="col-md-3 text-md-right">频次</label>
+              <input type="text" class="col-md-9" id="frequency" value="一天三次"/>
+            </div>
+            <div class="form-group row">
+              <label for="num" class="col-md-3 text-md-right">数量</label>
+              <input type="number" class="col-md-9" id="num" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addDrugSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--诊断结束Modal-->
+<div class="modal fade" id="EndModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">结束诊断</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          确定要结束诊断吗？
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">结束诊断</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--报告结果Modal-->
+<div class="modal fade" id="resultModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">报告结果</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <!--          <div>-->
+          <!--            暂无-->
+          <!--          </div>-->
+          <div>
+            身体很好！！！
+            <p class="text-right">2021/11/09</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
-<script src="lib/bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="./lib/bootstrap/js/jquery-3.5.1.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script>
-  $(function () {
-    //初始化
-    function initTable() {
-      var checkAll = $('#checkAll');
-      var trs = $('#checkTbody tr');
-      var tag = $('<td><input name="checkitem" type="checkbox"/></td>');
-      trs.prepend(tag);
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/toast/js/toastr.min.js"></script>
+<script src="./js/index.js"></script>
 
-      //得到tbody中的所有选框.
-      var checks = $('input[name="checkitem"]');
-
-      //给全选框添加事件
-      checkAll.on('click', function (event) {
-        if ($(this).prop('checked') == false) { //全部取消
-          // console.log('false');
-          $('#subTypeBtn').prop('disabled', true);
-          $('input[type="checkbox"]').prop('checked', false);
-        } else {
-          // console.log('true');
-          $('#subTypeBtn').prop('disabled', false);
-          $('input[type="checkbox"]').prop('checked', true);
-        }
-      });
-
-      //给每个单独的选择框加事件
-      $('#checkTbody').on('click', function (event) {
-        checks = $('input[name="checkitem"]');
-        if (event.target.name == 'checkitem') {
-          if ($(this).prop('checked') == false) {
-            $(this).prop('checked', false);
-          } else {
-            $(this).prop('checked', true);
-          }
-          //判断是否选满了
-          if (checks.length == $('#checkTbody').find('input:checked').length) {
-            checkAll.prop('checked', true);
-          } else {
-            checkAll.prop('checked', false);
-          }
-
-          //判断是否有选中
-          if ($('#checkTbody').find('input:checked').length != 0) {
-            $('#subTypeBtn').prop('disabled', false);
-          } else {
-            $('#subTypeBtn').prop('disabled', true);
-          }
-        }
-      });
-    }
-
-    initTable();
-
-    //新增点击事件
-    $('#addTypeSubmit').on('click', function () {
-      var html = '';
-      html += '<tr class="active">';
-      html += '<td><input name="checkitem" type="checkbox"/></td>'
-      html += '<td><span>查血</span></td>';
-      html += '<td><span>检验科</span></td>';
-      html += '<td><span>未检查</span></td>';
-      html += '<td><span>50</span></td>';
-      html += '<td><button type="button" class="btn p-0">查看结果</button></td>';
-      // html += '<td>';
-      html += '</tr>';
-      var html = $(html)
-      $('#checkTbody').append(html);
-      //取消全选
-      $('#checkAll').prop('checked', false);
-      $('#checkAll').prop('disabled', false);
-    });
-
-    $("#subTypeBtn").on('click', function () {
-      /** 批量删除*/
-      $("input[name='checkitem']:checked").each(function () {// 遍历选中的checkbox
-        var n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
-        delRow(n);
-      });
-    });
-
-    //删除选中行方法
-    function delRow(n) {
-      // console.log($("#checkTbody tr").length + '----' + n );
-      //判断表格为空
-      if ($("#checkTbody tr").length == n + 1) {
-        $('#checkAll').prop('checked', false);
-        $('#checkAll').prop('disabled', true);
-        $('#subTypeBtn').prop('disabled', true);
-      }
-      $("#checkTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
-
-    }
-  });
-</script>
 </html>
