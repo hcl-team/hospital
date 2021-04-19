@@ -24,7 +24,7 @@ body {
 }
 
 .table-box {
-  height: 150px;
+  max-height: 130px;
   overflow: auto;
 }
 
