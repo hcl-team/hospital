@@ -65,6 +65,7 @@ $(function () {
     html += '<td><span>检验科</span></td>';
     html += '<td><span>未检查</span></td>';
     html += '<td><span>50</span></td>';
+    html += '<td><span>暂无</span></td>'
     html += '<td><button type="button" class="btn btn-link p-0" data-toggle="modal" data-target="#resultModal">查看结果</button></td>';
     // html += '<td>';
     html += '</tr>';
@@ -86,16 +87,18 @@ $(function () {
 
   //删除选中行方法
   function delRow (n) {
+    $("#checkTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
+    $('#subTypeBtn').prop('disabled', true);
     // console.log($("#checkTbody tr").length + '----' + n );
+    // console.log($("#checkTbody tr").length == 0);
     //判断表格为空
-    if ($("#checkTbody tr").length == n + 1) {
+    if ($("#checkTbody tr").length == 0) {
+
       $('#checkAll').prop('checked', false);
       $('#checkAll').prop('disabled', true);
       $('#subTypeBtn').prop('disabled', true);
       $('#checkSubmitBtn').prop('disabled', true);
     }
-    $("#checkTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
-
   }
 });
 
@@ -169,6 +172,7 @@ $(function () {
     html += '<td><span>200ml</span></td>';
     html += '<td><span>一日一次</span></td>';
     html += '<td><span>1</span></td>';
+    html += '<td><span>暂无</span></td>'
     html += '</tr>';
     var html = $(html)
     $('#drugTbody').append(html);
@@ -188,32 +192,19 @@ $(function () {
 
   //删除选中行方法
   function delRow2 (n) {
+    $("#drugTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
+    $('#subDrugBtn').prop('disabled', true);
     // console.log($("#checkTbody tr").length + '----' + n );
+    // console.log($("#checkTbody tr").length == 0);
     //判断表格为空
-    if ($("#drugTbody tr").length == n + 1) {
+    if ($("#drugTbody tr").length == 0) {
+
       $('#drugCheckAll').prop('checked', false);
       $('#drugCheckAll').prop('disabled', true);
       $('#subDrugBtn').prop('disabled', true);
       $('#drugSubmitBtn').prop('disabled', true);
     }
-    $("#drugTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
-
   }
 })
 
-//toast
-function successToast () {
-  toastr.success('提交数据成功');
-}
 
-$('#checkSubmitBtn').on('click', () => {
-  successToast();
-})
-
-$('#homeSubmitBtn').on('click', () => {
-  successToast();
-})
-
-$('#drugSubmitBtn').on('click', () => {
-  successToast();
-})

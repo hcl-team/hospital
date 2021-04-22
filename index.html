@@ -240,8 +240,8 @@
               <!-- 第二部分S -->
               <div class="tab-pane fade" id="tab1-item2">
                 <div class="row">
-                  <div class="col-12 bg-light rounded text-center py-1 mb-1 button-pane">
-                    <button type="button" class="btn mr-3" id="addTypeBtn" data-toggle="modal"
+                  <div class="col-12 bg-light rounded text-center py-1 mb-2 button-pane">
+                    <button type="button" class="btn" id="addTypeBtn" data-toggle="modal"
                             data-target="#addTypeModal">
                       <i class="bi bi-plus-circle-fill"></i>
                       新增项目
@@ -258,8 +258,8 @@
                     </button>
                   </div>
 
-                  <div class="col-12 mb-1">
-                    <h6>
+                  <div class="col-12 mb-2">
+                    <h6 class="my-auto">
                       <span class="badge badge-info">本项目金额合计：</span>
 
                       <span class="badge"
@@ -268,7 +268,7 @@
                   </div>
 
                   <div class="col-12 px-0">
-                    <div class="table-responsive-lg" style="min-height: 300px">
+                    <div class="table-responsive" style="min-height: 300px">
                       <table class="table">
                         <thead id="checkThead">
                         <tr>
@@ -277,6 +277,7 @@
                           <th style="width: 6rem;" scope="col">执行科室</th>
                           <th style="width: 6rem;" scope="col">状态</th>
                           <th style="width: 5rem;" scope="col">单价</th>
+                          <th style="width: 6rem;" scope="col">开立时间</th>
                           <th style="width: 6rem;" scope="col">检查结果</th>
                         </tr>
                         </thead>
@@ -291,8 +292,8 @@
               <!-- 第三部分S -->
               <div class="tab-pane fade" id="tab1-item3">
                 <div class="row">
-                  <div class="col-12 bg-light rounded text-center py-1 mb-1 button-pane">
-                    <button type="button" class="btn mr-3" id="addDrugBtn" data-toggle="modal"
+                  <div class="col-12 bg-light rounded text-center py-1 mb-2 button-pane">
+                    <button type="button" class="btn" id="addDrugBtn" data-toggle="modal"
                             data-target="#addDrugModal">
                       <i class="bi bi-plus-circle-fill"></i>
                       增药
@@ -309,8 +310,8 @@
                     </button>
                   </div>
 
-                  <div class="col-12 mb-1">
-                    <h6>
+                  <div class="col-12 mb-2">
+                    <h6 class="my-auto">
                       <span class="badge badge-info">本项目金额合计：</span>
 
                       <span class="badge"
@@ -319,7 +320,7 @@
                   </div>
 
                   <div class="col-12 px-0">
-                    <div class="table-responsive-lg" style="min-height: 300px">
+                    <div class="table-responsive" style="min-height: 300px">
                       <table class="table">
                         <thead id="drugThead">
                         <tr>
@@ -331,6 +332,7 @@
                           <th style="width: 5rem;" scope="col">用量</th>
                           <th style="width: 6rem;" scope="col">频次</th>
                           <th style="width: 4rem;" scope="col">数量</th>
+                          <th style="width: 6rem;" scope="col">开立时间</th>
                         </tr>
                         </thead>
                         <tbody id="drugTbody"></tbody>
@@ -520,5 +522,23 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/toast/js/toastr.min.js"></script>
 <script src="./js/index.js"></script>
+<script>
+  //toast
+  function successToast () {
+    toastr.success('提交数据成功');
+  }
+
+  $('#checkSubmitBtn').on('click', () => {
+    successToast();
+  })
+
+  $('#homeSubmitBtn').on('click', () => {
+    successToast();
+  })
+
+  $('#drugSubmitBtn').on('click', () => {
+    successToast();
+  })
+</script>
 
 </html>

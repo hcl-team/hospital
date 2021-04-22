@@ -97,18 +97,275 @@
           </ol>
         </nav>
       </div>
-      <div class="row bg-white rounded">
+      <div class="row bg-white rounded py-3">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabOne" role="tab" aria-controls="home"
+                 aria-selected="true">医疗收费</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tabTwo" role="tab" aria-controls="profile"
+                 aria-selected="false">药品收费</a>
+            </li>
+          </ul>
+          <div class="tab-content p-3" id="myTabContent">
+            <div class="tab-pane fade show active" id="tabOne" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col-12 bg-light rounded text-center py-1 mb-2 button-pane">
+                  <button type="button" class="btn" id="allMedicalFee" data-toggle="modal" data-target="#allMedicalFeeModal" disabled>
+                    <i class="bi bi-check-circle-fill"></i>
+                    全部缴费
+                  </button>
+                </div>
+                <div class="col-12 mb-2 px-0">
+                  <div class="row px-3">
+<!--                    <h6 class="mr-auto my-auto">-->
+<!--                      <span class="badge badge-info">所选项目金额合计：</span>-->
 
-        <!-- 缴纳所勾选的内容，并移除 -->
-        <button type="button">缴费</button>
-        <!--        表格内容-->
-        选择框 <br/>
-        病历号 <br/>
-        姓名 <br/>
-        检查项(单项) <br/>
-        价格 <br/>
-        状态(红色 未缴费，绿色 已缴费) <br/>
-        确认缴费(button) <br/>
+<!--                      <span class="badge"-->
+<!--                            style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3"><span>120</span>元</span>-->
+<!--                    </h6>-->
+                    <div class="ml-auto">
+                      <select class="form-control form-control-sm" id="cashierSelect">
+                        <option class="" value="">全部</option>
+                        <option class="text-danger" value="未缴费">未缴费</option>
+                        <option class="text-success" value="已缴费">已缴费</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 px-0">
+                  <div class="table-responsive" style="min-height: 300px">
+                    <table class="table">
+                      <thead id="medicalThead">
+                      <tr>
+                        <th style="width: 3rem;"></th>
+                        <th style="width: 6rem;" scope="col">病历号</th>
+                        <th style="width: 6rem;" scope="col">姓名</th>
+                        <th style="width: 10rem;" scope="col">检查项</th>
+                        <th style="width: 6rem;" scope="col">科室</th>
+                        <th style="width: 5rem;" scope="col">单价</th>
+                        <th style="width: 6rem;" scope="col">状态</th>
+                        <th style="width: 6rem;" scope="col">缴费时间</th>
+                        <th style="width: 6rem;" scope="col" class="text-right">确认缴费</th>
+                      </tr>
+                      </thead>
+                      <tbody id="medicalTbody">
+                      <tr>
+                        <td>111</td>
+                        <td>Otto</td>
+                        <td>查血</td>
+                        <td>检验科</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      <tr>
+                        <td>222</td>
+                        <td>hcl</td>
+                        <td>查血</td>
+                        <td>检验科</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      <tr>
+                        <td>333</td>
+                        <td>cc</td>
+                        <td>查血</td>
+                        <td>检验科</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabTwo" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="row">
+                <div class="col-12 bg-light rounded text-center py-1 mb-2 button-pane">
+                  <button type="button" class="btn" id="allDrugFee" data-toggle="modal" data-target="#allDrugFeeModal" disabled>
+                    <i class="bi bi-check-circle-fill"></i>
+                    全部缴费
+                  </button>
+                </div>
+                <div class="col-12 mb-2 px-0">
+                  <div class="row px-3">
+                    <!--                    <h6 class="mr-auto my-auto">-->
+                    <!--                      <span class="badge badge-info">所选项目金额合计：</span>-->
+
+                    <!--                      <span class="badge"-->
+                    <!--                            style="color: #ffa87a; border: 1px solid #ffa87a; background-color: #ffede3"><span>120</span>元</span>-->
+                    <!--                    </h6>-->
+                    <div class="ml-auto">
+                      <select class="form-control form-control-sm" id="payDrugSelect">
+                        <option class="" value="">全部</option>
+                        <option class="text-danger" value="未缴费">未缴费</option>
+                        <option class="text-success" value="已缴费">已缴费</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 px-0">
+                  <div class="table-responsive" style="min-height: 300px">
+                    <table class="table">
+                      <thead id="payDrugThead">
+                      <tr>
+                        <th style="width: 3rem;"></th>
+                        <th style="width: 6rem;" scope="col">病历号</th>
+                        <th style="width: 6rem;" scope="col">姓名</th>
+                        <th style="width: 10rem;" scope="col">药品名称</th>
+                        <th style="width: 6rem;" scope="col">规格</th>
+                        <th style="width: 5rem;" scope="col">单价</th>
+                        <th style="width: 6rem;" scope="col">状态</th>
+                        <th style="width: 6rem;" scope="col">缴费时间</th>
+                        <th style="width: 6rem;" scope="col" class="text-right">确认缴费</th>
+                      </tr>
+                      </thead>
+                      <tbody id="payDrugTbody">
+                      <tr>
+                        <td>111</td>
+                        <td>Otto</td>
+                        <td>999感冒灵颗粒</td>
+                        <td>10袋*1盒</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      <tr>
+                        <td>222</td>
+                        <td>hcl</td>
+                        <td>999感冒灵颗粒</td>
+                        <td>10袋*1盒</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      <tr>
+                        <td>333</td>
+                        <td>cc</td>
+                        <td>999感冒灵颗粒</td>
+                        <td>10袋*1盒</td>
+                        <td>5.00</td>
+                        <td class="text-danger">未缴费</td>
+                        <td>2021/11/09</td>
+                        <td class="text-right"><button type="button" class="btn btn-success py-1">缴费</button></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--医疗全部缴费Modal-->
+<div class="modal fade" id="allMedicalFeeModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">缴费金额</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h5>总价：<span>111</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="allMedicalFeeSubmitModal">确认缴费</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--医疗单项缴费Modal-->
+<div class="modal fade" id="singleMedicalFeeModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">缴费金额</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h5>总价：<span>222</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="singleMedicalFeeSubmitModal">确认缴费</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--药品全部缴费Modal-->
+<div class="modal fade" id="allDrugFeeModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">缴费金额</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h5>总价：<span>333</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="allDrugFeeSubmitModal">确认缴费</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--药品单项缴费Modal-->
+<div class="modal fade" id="singleDrugFeeModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">缴费金额</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h5>总价：<span>444</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="singleDrugFeeSubmitModal">确认缴费</button>
       </div>
     </div>
   </div>
@@ -120,4 +377,5 @@
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/toast/js/toastr.min.js"></script>
+<script src="./js/cashier.js"></script>
 </html>
