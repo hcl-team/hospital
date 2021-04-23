@@ -23,6 +23,11 @@ body {
   caption-side: top;
 }
 
+.table {
+  table-layout: fixed;
+  margin-bottom: -1px;
+}
+
 .table-box {
   max-height: 130px;
   overflow: auto;
