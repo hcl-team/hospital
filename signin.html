@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="icon/yiyuan.svg" type="image/svg">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <title>HCL 门诊系统</title>
+  <style>
+    .container-self {
+      min-width: 300px;
+    }
+
+    @media (max-width: 575px) {
+      .container-self {
+        width: 90%;
+      }
+    }
+
+    @media screen and (min-width: 576px) {
+      .container-self {
+        width: 550px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-light">
+<div class="container-self mx-auto my-5">
+  <div class="p-3 shadow bg-white rounded">
+    <form class="mx-5 my-2">
+
+      <h2 class="mb-3 text-center">登录</h2>
+      <input type="text" class="form-control mb-3" placeholder="Username">
+      <input type="password" class="form-control mb-3" placeholder="Password">
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="check">
+        <label class="form-check-label" for="check">Remenber me</label>
+      </div>
+
+      <button type="submit" class="text-white btn btn-info btn-block mb-3">Sign in</button>
+    </form>
+    <div class="text-center mb-3">
+      <a href="">
+        <span>New to account? Create an account. </span>
+      </a>
+    </div>
+  </div>
+</div>
+<script src="./lib/bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
