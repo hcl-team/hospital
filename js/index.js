@@ -1,7 +1,21 @@
+//toast
+function successToast () {
+  toastr.success('提交数据成功');
+}
+
+//病历首页
+$(function () {
+  //提交、开立
+  $('#homeSubmitBtn').on('click', () => {
+    successToast();
+  })
+})
+
+
 //检查申请方法
 $(function () {
   //初始化
-  function initTable () {
+  function initTable() {
     let checkAll = $('#checkAll');
     let trs = $('#checkTbody tr');
     let tag = $('<td><input name="checkitem" type="checkbox"/></td>');
@@ -86,7 +100,7 @@ $(function () {
   });
 
   //删除选中行方法
-  function delRow (n) {
+  function delRow(n) {
     $("#checkTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
     $('#subTypeBtn').prop('disabled', true);
     // console.log($("#checkTbody tr").length + '----' + n );
@@ -100,12 +114,32 @@ $(function () {
       $('#checkSubmitBtn').prop('disabled', true);
     }
   }
+
+  //提交、开立
+  $('#checkSubmitBtn').on('click', () => {
+    let tableHtml = $("#checkTbody");
+    getCheckTableData(tableHtml);
+    successToast();
+  })
+
+  //提交时获取表格内容
+  function getCheckTableData(container) {
+    let table = [];
+    $(container).find('tr').each(function () {
+      let row = [];
+      $(this).find('td').each(function () {
+        row.push($(this).text().trim());
+      });
+      table.push(row);
+    });
+    console.log(table);
+  }
 });
 
 //开处方单方法
 $(function () {
   //初始化
-  function initTable2 () {
+  function initTable2() {
     let checkAll = $('#drugCheckAll');
     let trs = $('#drugTbody tr');
     let tag = $('<td><input name="checkitem2" type="checkbox"/></td>');
@@ -165,14 +199,14 @@ $(function () {
     var html = '';
     html += '<tr class="active">';
     html += '<td><input name="checkitem2" type="checkbox"/></td>'
-    html += '<td><span>复方甘露醇注射液(伸宁)</span></td>';
-    html += '<td><span>250ml*1袋</span></td>';
-    html += '<td><span>15.56</span></td>';
-    html += '<td><span>静脉注射</span></td>';
-    html += '<td><span>200ml</span></td>';
-    html += '<td><span>一日一次</span></td>';
-    html += '<td><span>1</span></td>';
-    html += '<td><span>暂无</span></td>'
+    html += '<td><span class="drugName">复方甘露醇注射液(伸宁)</span></td>';
+    html += '<td><span class="drugSpeci">250ml*1袋</span></td>';
+    html += '<td><span class="drugPrice">15.56</span></td>';
+    html += '<td><span class="drugUsage">静脉注射</span></td>';
+    html += '<td><span class="drugSize">200ml</span></td>';
+    html += '<td><span class="drugUseFrequ">一日一次</span></td>';
+    html += '<td><span class="drugNum">1</span></td>';
+    html += '<td><span class="drugDate">暂无</span></td>'
     html += '</tr>';
     var html = $(html)
     $('#drugTbody').append(html);
@@ -191,7 +225,7 @@ $(function () {
   });
 
   //删除选中行方法
-  function delRow2 (n) {
+  function delRow2(n) {
     $("#drugTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
     $('#subDrugBtn').prop('disabled', true);
     // console.log($("#checkTbody tr").length + '----' + n );
@@ -205,6 +239,27 @@ $(function () {
       $('#drugSubmitBtn').prop('disabled', true);
     }
   }
+
+  //提交、开立
+  $('#drugSubmitBtn').on('click', () => {
+    let tableHtml = $("#drugTbody");
+    getDrugTableData(tableHtml);
+    successToast();
+  })
+
+  //提交时获取表格内容
+  function getDrugTableData(container) {
+    let table = [];
+    $(container).find('tr').each(function () {
+      let row = [];
+      $(this).find('td').each(function () {
+        row.push($(this).text().trim());
+      });
+      table.push(row);
+    });
+    console.log(table);
+  }
+
 })
 
 
