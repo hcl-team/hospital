@@ -89,6 +89,7 @@ $(function () {
     $('#checkAll').prop('checked', false);
     $('#checkAll').prop('disabled', false);
     $('#checkSubmitBtn').prop('disabled', false);
+    getCheckPriceSum();
   });
 
   $("#subTypeBtn").on('click', function () {
@@ -97,6 +98,7 @@ $(function () {
       var n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
       delRow(n);
     });
+    getCheckPriceSum();
   });
 
   //删除选中行方法
@@ -121,6 +123,15 @@ $(function () {
     getCheckTableData(tableHtml);
     successToast();
   })
+
+  //检查项价格总计
+  function getCheckPriceSum() {
+    let checkPriceSum = 0;
+    $("#checkTbody").find('tr').each(function () {
+      checkPriceSum += parseFloat($(this).find('td:eq(4) span').text());
+    });
+    $('#allCheckPrice').text(checkPriceSum)
+  }
 
   //提交时获取表格内容
   function getCheckTableData(container) {
@@ -214,6 +225,7 @@ $(function () {
     $('#drugCheckAll').prop('checked', false);
     $('#drugCheckAll').prop('disabled', false);
     $('#drugSubmitBtn').prop('disabled', false);
+    getDrugPriceSum();
   });
 
   $("#subDrugBtn").on('click', function () {
@@ -222,6 +234,7 @@ $(function () {
       var n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
       delRow2(n);
     });
+    getDrugPriceSum();
   });
 
   //删除选中行方法
@@ -247,6 +260,15 @@ $(function () {
     successToast();
   })
 
+  //药品价格总计
+  function getDrugPriceSum() {
+    let drugSum = 0;
+    $("#drugTbody").find('tr').each(function () {
+      drugSum += parseFloat($(this).find('td:eq(3) span').text()) * parseInt($(this).find('td:eq(7) span').text());
+    });
+    $('#allDrugPrice').text(drugSum)
+  }
+
   //提交时获取表格内容
   function getDrugTableData(container) {
     let table = [];
@@ -257,7 +279,7 @@ $(function () {
       });
       table.push(row);
     });
-    console.log(table);
+    // console.log(table);
   }
 
 })
