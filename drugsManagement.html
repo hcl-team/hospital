@@ -95,7 +95,7 @@
           </div>
           <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body border-bottom">
-              <a href="medicalCheckup.html">药品管理</a>
+              <a href="drugsManagement.html">药品管理</a>
             </div>
           </div>
         </div>
@@ -109,13 +109,266 @@
           </ol>
         </nav>
       </div>
+      <div class="row bg-white rounded py-3">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#tabTwo" role="tab" aria-controls="home"
+                 aria-selected="true">药品管理</a>
+            </li>
+          </ul>
+          <div class="tab-content p-3" id="myTabContent">
+            <div class="tab-pane fade show active" id="tabTwo" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="row">
+                <div class="col-12 bg-light rounded text-center py-1 mb-2 button-pane">
+                  <button type="button" class="btn" id="batchDrugDel" data-toggle="modal" data-target="#batchDrugDelModal" disabled>
+                    <i class="bi bi-x-circle-fill"></i>
+                    批量删除
+                  </button>
+                  <button type="button" class="btn" id="addDrug" data-toggle="modal" data-target="#addDrugModal">
+                    <i class="bi bi-plus-circle-fill"></i>
+                    新增药品
+                  </button>
+                </div>
+                <div class="col-12 mb-2 px-0">
+                  <div class="row px-3 my-1">
+                    <div class="ml-auto px-0 mr-2">
+                      <input class="form-control form-control-sm" type="text" id="drugSearchTxt"/>
+                    </div>
+                     <div class="px-0">
+                       <button type="button" class="btn btn-info btn-sm" id="drugSearchBtn">药品搜索</button>
+                     </div>
+                  </div>
+                </div>
+
+                <div class="col-12 px-0">
+                  <div class="table-responsive" style="min-height: 300px">
+                    <table id="example-datatable" class="table">
+                      <thead id="manageDrugThead">
+                      <tr>
+                        <th style="width: 3rem;"><input id='manageCheckAll' type="checkbox"/></th>
+                        <th style="width: 9rem;" scope="col">药品编码</th>
+                        <th style="width: 15rem;" scope="col">药品名称</th>
+                        <th style="width: 9rem;" scope="col">药品规格</th>
+                        <th style="width: 9rem;" scope="col">药品单位</th>
+                        <th style="width: 9rem;" scope="col">药品单价</th>
+                        <th style="width: 9rem;" scope="col">药品剂型</th>
+                        <th style="width: 12rem;" scope="col" class="text-center">操作</th>
+                      </tr>
+                      </thead>
+                      <tbody id="manageDrugTbody">
+                      <tr>
+                        <td><span class="manageDrugID">9090980</span></td>
+                        <td><span class="manageDrugName">50%葡萄糖注射液</span></td>
+                        <td><span class="manageDrugSpeci">10:20ml*1支</span></td>
+                        <td><span class="manageDrugUnit">支</span></td>
+                        <td><span class="manageDrugPrice">25.16</span></td>
+                        <td><span class="manageDrugType">针剂</span></td>
+                        <td class="text-center">
+                          <button type="button" class="btn btn-success py-1 " name="editDrugItem" data-toggle="modal" data-target="#editDrugModal">编辑</button>
+                          <button type="button" class="btn btn-danger py-1 " name="delDrugItem" data-toggle="modal" data-target="#singleDrugDelModal">删除</button>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+<!--                分页 S-->
+<!--                <div class="col-12 px-0 mt-2">-->
+<!--                  <nav aria-label="Page navigation example">-->
+<!--                    <ul class="pagination justify-content-end">-->
+<!--                      <li class="page-item">-->
+<!--                        <a class="page-link" href="#" aria-label="Previous">-->
+<!--                          <span aria-hidden="true">&laquo;</span>-->
+<!--                        </a>-->
+<!--                      </li>-->
+<!--                      <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--                      <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                      <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                      <li class="page-item">-->
+<!--                        <a class="page-link" href="#" aria-label="Next">-->
+<!--                          <span aria-hidden="true">&raquo;</span>-->
+<!--                        </a>-->
+<!--                      </li>-->
+<!--                    </ul>-->
+<!--                  </nav>-->
+<!--                </div>-->
+<!--                分页 E-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+<!--增药Modal-->
+<div class="modal fade" id="addDrugModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">新增药品</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form action="">
+            <div class="form-group row">
+              <label for="manageDrugName" class="col-md-3 text-md-right">药品名称</label>
+              <input type="text" class="col-md-9" id="manageDrugName" value="50%葡萄糖注射液">
+            </div>
+            <div class="form-group row">
+              <label for="manageDrugSpeci" class="col-md-3 text-md-right">药品规格</label>
+              <input type="text" class="col-md-9" id="manageDrugSpeci" value="10:20ml*1支">
+            </div>
+            <div class="form-group row">
+              <label for="manageDrugUnit" class="col-md-3 text-md-right">药品单位</label>
+              <select class="form-control-sm col-md-9" id="manageDrugUnit">
+                <option>请选择</option>
+                <option value="支">支</option>
+                <option value="瓶">瓶</option>
+                <option value="盒">盒</option>
+                <option value="袋">袋</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="manageDrugPrice" class="col-md-3 text-md-right">药品单价</label>
+              <input type="text" class="col-md-9" id="manageDrugPrice" value="25.16">
+            </div>
+
+            <div class="form-group row">
+              <label for="manageDrugType" class="col-md-3 text-md-right">药品剂型</label>
+              <select class="form-control-sm col-md-9" id="manageDrugType">
+                <option>请选择</option>
+                <option value="针剂">针剂</option>
+                <option value="片剂">片剂</option>
+                <option value="胶囊">胶囊</option>
+                <option value="颗粒剂">颗粒剂</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addDrugSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--编辑药品Modal-->
+<div class="modal fade" id="editDrugModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">编辑药品</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form action="">
+            <div class="form-group row">
+              <label for="editDrugName" class="col-md-3 text-md-right">药品名称</label>
+              <input type="text" class="col-md-9" id="editDrugName" value="50%葡萄糖注射液">
+            </div>
+            <div class="form-group row">
+              <label for="editDrugSize" class="col-md-3 text-md-right">药品规格</label>
+              <input type="text" class="col-md-9" id="editDrugSize">
+            </div>
+            <div class="form-group row">
+              <label for="editDrugUnit" class="col-md-3 text-md-right">药品单位</label>
+              <select class="form-control-sm col-md-9" id="editDrugUnit">
+                <option>请选择</option>
+                <option value="支">支</option>
+                <option value="瓶">瓶</option>
+                <option value="盒">盒</option>
+                <option value="袋">袋</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="editDrugPrice" class="col-md-3 text-md-right">药品单价</label>
+              <input type="text" class="col-md-9" id="editDrugPrice">
+            </div>
+
+            <div class="form-group row">
+              <label for="editDrugType" class="col-md-3 text-md-right">药品剂型</label>
+              <select class="form-control-sm col-md-9" id="editDrugType">
+                <option>请选择</option>
+                <option value="针剂">针剂</option>
+                <option value="片剂">片剂</option>
+                <option value="胶囊">胶囊</option>
+                <option value="颗粒剂">颗粒剂</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="editDrugModalSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--药品批量删除Modal-->
+<div class="modal fade" id="batchDrugDelModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">删除药品</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          确认删除选中的药品吗？</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="batchDrugDelModalSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--药品单项删除Modal-->
+<div class="modal fade" id="singleDrugDelModal" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">删除药品</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          确认删除此药品吗？
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="singleDrugDelModalSubmit">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
+
 <script src="./lib/bootstrap/js/jquery-3.5.1.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/toast/js/toastr.min.js"></script>
+<script src="./js/drugsManagement.js"></script>
+
 </html>
