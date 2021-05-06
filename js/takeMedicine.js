@@ -39,10 +39,20 @@ $(function () {
 
   //多项取药
   $("#allTakeMedicineSubmitModal").on('click', function () {
+    let table = [];
     $("input[name='takeMedicineItem']:checked").each(function () {
+      let n = $(this).parents("tr");
+      n.each(function () {
+        let row = [];
+        $(this).find('td').each(function () {
+          row.push($(this).text().trim());
+        });
+        table.push(row);
+      });
       medicalFn(this);
       $('#allTakeMedicine').prop('disabled', true);
     });
+    // console.log(table);
   });
 
   // 单项取药

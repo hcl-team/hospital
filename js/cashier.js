@@ -39,10 +39,20 @@ $(function () {
 
   //多项缴费
   $("#allMedicalFeeSubmitModal").on('click', function () {
+    let table = [];
     $("input[name='medicalCheckItem']:checked").each(function () {
+      let n = $(this).parents("tr");
+      n.each(function () {
+        let row = [];
+        $(this).find('td').each(function () {
+          row.push($(this).text().trim());
+        });
+        table.push(row);
+      });
       medicalFn(this);
       $('#allMedicalFee').prop('disabled', true);
     });
+    // console.log(table);
   });
 
   // 单项缴费
@@ -130,15 +140,25 @@ $(function () {
   initTable();
 
   /**
-    * 缴费后修改属性
-    */
+   * 缴费后修改属性
+   */
 
   //多项缴费
   $("#allDrugFeeSubmitModal").on('click', function () {
+    let table = [];
     $("input[name='payDrugCheckItem']:checked").each(function () {
+      let n = $(this).parents("tr");
+      n.each(function () {
+        let row = [];
+        $(this).find('td').each(function () {
+          row.push($(this).text().trim());
+        });
+        table.push(row);
+      });
       medicalFn(this);
       $('#allDrugFee').prop('disabled', true);
     });
+    // console.log(table);
   });
 
   // 单项缴费

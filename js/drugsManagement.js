@@ -84,11 +84,21 @@ $(function () {
     /** 批量删除*/
     $('#batchDrugDelModal').modal('show');
     $("#batchDrugDelModalSubmit").on("click", function () {
+      let table = [];
       $("input[name='manageCheckItem']:checked").each(function () {// 遍历选中的checkbox
-        var n = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
-        delRow2(n);
+        let n = $(this).parents("tr");
+        n.each(function () {
+          let row = [];
+          $(this).find('td').each(function () {
+            row.push($(this).text().trim());
+          });
+          table.push(row);
+        });
+        delRow2(this);
       });
-    })
+      console.log(table);
+    });
+
   });
 
   //单项删除
@@ -116,7 +126,8 @@ $(function () {
   }
 
   //删除选中行方法
-  function delRow2 (n) {
+  function delRow2 (sta) {
+    let n = $(sta).parents("tr").index();
     $("#manageDrugTbody").find("tr:eq(" + n + ")").remove(); //移除选中的行
     $('#batchDrugDel').prop('disabled', true);
     // console.log($("#checkTbody tr").length + '----' + n );
